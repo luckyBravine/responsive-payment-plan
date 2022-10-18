@@ -1,0 +1,242 @@
+:root{
+    --clr-1: rgb(98, 0, 234);
+    --clr-2: rgb(162, 0, 177);
+
+    --primary-clr: hsl(0, 0%, 94%);
+
+    --free-clr: hsla(240, 100%, 90%, 0.856);
+    --basic-clr:  hsla(240, 100%, 60%, 0.856);
+    --standard-clr: hsla(240, 100%, 40%, 0.829);
+    --premium-clr: hsla(240, 100%, 21%, 0.884);
+
+    --light-text-clr-1: hsla(240, 100%, 90%, 0.856);
+    --light-text-clr-2: hsla(240, 100%, 76%, 0.856);
+    --light-text-clr-3: hsla(240, 100%, 68%, 0.829);
+    --light-text-clr-4: hsla(240, 100%, 78%, 0.884);
+}
+
+*,
+*::before
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--primary-clr);
+    position: relative;
+}
+
+body h2{
+    text-align: center;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2.1;
+}
+
+.payment-plan{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*display: flex;
+    justify-content: center;*/
+    margin: 4rem auto;
+}
+
+.card{
+    width: 16rem;
+    height: 20rem;
+    padding: 0.3rem 1rem;
+    margin: 0 1rem;
+    border-radius: 10px;
+}
+
+.card:hover{
+    background: linear-gradient(
+        to right,
+        var(--clr-1),
+        var(--clr-2),
+        var(--clr-1)
+    );
+    background-size: 200%;
+    animation: cool 10s linear infinite;
+    transform: translateY(-6px);
+    transition: 0.4 ease-in-out;
+}
+
+@keyframes cool{
+    from{
+        background-position: 0% center;
+    }
+    to{
+        background-position: -200% center;
+    }
+}
+
+.msgBody{
+    width: 70%;
+    height: 6rem;
+}
+
+.card h3{
+    text-align: center;
+    line-height: 1;
+    font-size: 0.9rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.price-plan{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding: 0 0 0.8rem 0;
+}
+
+.monthly-price{
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.curency{
+    font-size: 1rem;
+    lighting-color: var(--light-text-clr);
+}
+
+.duration{
+    font-size: 0.8rem;
+}
+
+.yearly-price{
+    font-size: 0.78rem;
+}
+
+
+/*free colors*/
+.free-plan{
+    background-color: var(--free-clr);
+}
+
+.free-plan .duration{
+    color: var(--light-text-clr-1);
+}
+
+.free-plan .monthly-price{
+    color: var(--light-text-clr-4);
+}
+
+.free-plan .cta-btn{
+    background: var(--light-text-clr-4);
+}
+
+/* basic colors*/
+.basic-plan{
+    background-color: var(--basic-clr);
+}
+
+.basic-plan .duration{
+    color: var(--light-text-clr-2);
+}
+
+.basic-plan .monthly-price{
+    color: var(--light-text-clr-1);
+}
+
+.basic-plan .cta-btn{
+    background: var(--light-text-clr-1);
+}
+
+.basic-plan .yearly-price{
+    color: var(--light-text-clr-2);
+}
+
+/*standard colors*/
+.standard-plan{
+    background-color: var(--standard-clr);
+}
+
+.standard-plan .duration{
+    color: var(--light-text-clr-3);
+}
+
+.standard-plan .monthly-price{
+    color: var(--light-text-clr-2);
+}
+
+.standard-plan .cta-btn{
+    background: var(--light-text-clr-1);
+}
+
+.standard-plan .yearly-price{
+    color: var(--light-text-clr-3);
+}
+
+/*premium colors*/
+.premeium-plan{
+    background-color: var(--premium-clr);
+}
+
+.premeium-plan .duration{
+    color: var(--light-text-clr-4);
+}
+
+.premeium-plan .monthly-price{
+    color: var(--light-text-clr-4);
+}
+
+.premeium-plan .cta-btn{
+    background: var(--light-text-clr-3);
+}
+
+.premeium-plan .yearly-price{
+    color: var(--light-text-clr-4);
+}
+
+.plan-contents{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+.cta-btn{
+    outline: none;
+    border: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 0.6rem 1.6rem;
+    margin: 0.8rem auto;
+    border-radius: 20px;
+}
+
+/* media keyframes for responsiveness*/
+/*width 992px */
+@media screen and (max-width: 986px) {
+    .payment-plan{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .payment-plan{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .payment-plan{
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        margin: 2rem auto;
+        place-items: center;
+    }
+}
